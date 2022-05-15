@@ -1,6 +1,7 @@
 import pandas as pd
 
-def balance_sup_dem(supply_data_py:pd.DataFrame, demand_data_py:pd.DataFrame):
+
+def balance_sup_dem(supply_data_py: pd.DataFrame, demand_data_py: pd.DataFrame):
     new_cap = []
     if supply_data_py.cap.sum() > demand_data_py.cap.sum():
         for i in supply_data_py.cap:
@@ -19,5 +20,7 @@ def balance_sup_dem(supply_data_py:pd.DataFrame, demand_data_py:pd.DataFrame):
             new_cap.append(z)
         demand_data_py.cap = new_cap
     else:
-        print(f"supply capacity:{supply_data_py.cap.sum()} == demand capacity:{demand_data_py.cap.sum()}\nNo need to adapt capacities!")
+        print(
+            f"supply capacity:{supply_data_py.cap.sum()} == demand capacity:{demand_data_py.cap.sum()}\nNo need to adapt capacities!"
+        )
     return supply_data_py, demand_data_py
