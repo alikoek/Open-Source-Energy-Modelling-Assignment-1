@@ -1,29 +1,29 @@
 # This workflow will install Python dependencies, run tests with a single version of Python
-# For more information see httpshelp.github.comactionslanguage-and-framework-guidesusing-python-with-github-actions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name Run tests
+name: Run tests
 
-on
-  push
-    branches [ main ]
-  pull_request
-    branches [ main ]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-jobs
-  run-test
+jobs:
+  run-test:
 
-    runs-on ubuntu-latest
+    runs-on: ubuntu-latest
 
-    steps
-    - uses actionscheckout@v2
+    steps:
+    - uses: actions/checkout@v2
 
-    - name Set up Python 3.9
-      uses actionssetup-python@v2
-      with
-        python-version 3.9
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
 
-    - name Install dependencies
-      run pip install pytest
+    - name: Install dependencies
+      run: pip install pytest
 
-    - name Test with pytest
-      run pytest
+    - name: Test with pytest
+      run: pytest
