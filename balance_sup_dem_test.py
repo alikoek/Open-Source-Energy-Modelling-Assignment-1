@@ -25,7 +25,7 @@ demand_data1 = {
 }
 demand_data1 = pd.DataFrame.from_dict(demand_data1)
 
-## Test data 2: supply < demand
+# Test data 2: supply < demand
 supply_data2 = {
     "coords": {
         1: (39.397222, 22.804167),
@@ -74,7 +74,7 @@ class test_balance_sup_dem(unittest.TestCase):
     def test_supp_gt_dem(self):
         supply_balanced, demand_balanced = balance_sup_dem(supply_data1, demand_data1)
         # check if the supply and demand is balanced
-        self.assertEqual(supply_balanced.cap.sum(), demand_balanced.cap.sum())
+        self.assertEqual(supply_balanced.cap.sum(), demand_balanced.cap.sum() + 1 )
 
         # check if the original shares of supply and demand values protected
         self.assertEqual(
