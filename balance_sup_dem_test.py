@@ -16,16 +16,16 @@ supply_data1 = pd.DataFrame.from_dict(supply_data1)
 
 demand_data1 = {
     "coords": {
-        7: (39.398056,22.804167),
-        8: (39.397222,22.809444),
-        9: (39.396667,22.813889),
-        10: (39.396111,22.805833),
+        7: (39.398056, 22.804167),
+        8: (39.397222, 22.809444),
+        9: (39.396667, 22.813889),
+        10: (39.396111, 22.805833),
     },
     "cap": {7: 5, 8: 10, 9: 12, 10: 8},
 }
 demand_data1 = pd.DataFrame.from_dict(demand_data1)
 
-## Test data 2: supply < demand
+# Test data 2: supply < demand
 supply_data2 = {
     "coords": {
         1: (39.397222, 22.804167),
